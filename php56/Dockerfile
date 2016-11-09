@@ -8,7 +8,9 @@ RUN locale-gen en_US.UTF-8
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php -y
 RUN apt-get update
 
-RUN apt-get install -y php5.6 php-pear php-memcache
+RUN apt-get install -y php5.6 php-pear php5.6-mysql php5.6-dev php5.6-mcrypt php5.6-gd php5.6-curl php5.6-memcache php5.6-sqlite php5.6-intl
+
+RUN update-alternatives --set php /usr/bin/php5.6
 
 RUN cd /tmp && \
     php -r "readfile('https://getcomposer.org/installer');" | php && \
