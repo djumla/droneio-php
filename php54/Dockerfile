@@ -2,7 +2,7 @@ FROM ubuntu:trusty
 MAINTAINER David Jardin <d.jardin@djumla.de>
 
 RUN apt-get update
-RUN apt-get install -y software-properties-common git wget curl nodejs npm
+RUN apt-get install -y software-properties-common git wget curl nodejs npm ntp
 RUN apt-get install --reinstall ca-certificates
 RUN locale-gen en_US.UTF-8
 RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php5-oldstable -y
